@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class CN_LAGRANGE {
+
+    public static void main(String args[]){
+
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Qual o numero de pontos?");
+        int n = sc.nextInt();
+        System.out.println("Qual o valor xo?");
+        double xo = sc.nextDouble();
+        System.out.println("Qual o valor xn?");
+        double xn = sc.nextDouble();
+
+        double passo = (xn-xo)/n;
+        double[] x = new double[n+1];
+        double[] f = new double[n+1];
+
+        int i=0;
+
+        while(i<=n){
+
+            if(i==0){
+                x[i]=xo;
+            }else{
+
+                x[i]=xo+i*passo;
+            }
+
+            f[i]=Math.exp(x[i]);
+
+            i++;
+
+        }
+
+        for(int k=0;k<=n;k++) {
+            System.out.println("x = " + x[k] + "\t f = " + f[k]);
+        }
+
+        System.out.println("Qual o valor x?");
+        double X = sc.nextDouble();
+        
+    }
